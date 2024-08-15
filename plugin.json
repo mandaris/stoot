@@ -1,5 +1,5 @@
 {
-  "version": "2024.1",
+  "version": "1.0.0",
   "title": "stoot",
   "description": "Static Mastodon twoot embedding",
   "includes": [
