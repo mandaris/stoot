@@ -35,11 +35,14 @@
 	border-radius: 12px;
 	background: var(--white);
 	width: 100%;
+	max-width: 100%;
 	@media screen and (min-width: 900px) {
 		width: 80%;
+		max-width: 100%;
 	}
 	@media screen and (min-width: 1024px) {
 		width: 85%;
+		max-width: 100%;
 	}
 	/* @media screen and (min-width: 1536px) {
 	   width: 85%;
@@ -64,6 +67,7 @@
 	.toot-blockquote {
 		/* For reposts */
 		width: 100% !important;
+		max-width: 100%;
 	}
 }
 
