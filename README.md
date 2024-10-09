@@ -1,3 +1,5 @@
+![stoot logo](documentation/log.png)
+
 # Stoot shortcode
 
 This is a Hugo shortcode that will allow you to embed a mastodon toot into your blog. It's 100% based off of [this post](https://www.brycewray.com/posts/2022/06/static-mastodon-toots-hugo/) by [Bryce Wray](https://www.brycewray.com). I think that you can find updates from the original author by looking at the [git repository](https://github.com/brycewray/hugo-site) for his site. 
@@ -47,3 +49,6 @@ Also, I _DO_ know that I could use the iframe that mastodon provides to embed a 
 
 1.0.1
 : Removed width so that the blockquote expands as needed
+
+1.0.2
+: Add new logo

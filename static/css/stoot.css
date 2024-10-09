@@ -47,11 +47,6 @@
 		- https://css-tricks.com/better-line-breaks-for-long-urls/
 		*/
 	}
-	.toot-blockquote {
-		/* For reposts */
-		width: 100% !important;
-		max-width: 100%;
-	}
 }
 
 .toot-body {
