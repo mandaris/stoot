@@ -1,4 +1,4 @@
-![stoot logo](documentation/log.png)
+![stoot logo](documentation/logo.png)
 
 # Stoot shortcode
 
