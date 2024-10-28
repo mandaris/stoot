@@ -51,7 +51,9 @@ This plugin does not cover the case of text that is content sensitive.
 
 Also, I _DO_ know that I could use the iframe that mastodon provides to embed a post, but choose this as an option as it better integrates with the style of my blog.
 
+
 ## Version History
+
 1.0.0
 : Initial release
 
@@ -60,4 +62,6 @@ Also, I _DO_ know that I could use the iframe that mastodon provides to embed a 
 
 1.0.2
 : Add new logo
+
+1.0.3
 : Add option to toggle Open Graph card on embedded toots
