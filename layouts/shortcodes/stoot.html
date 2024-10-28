@@ -1,5 +1,6 @@
 {{ $masIns := .Get "instance" }}
 {{ $id := .Get "id" }}
+{{ $enableOGCard := .Get "enableOGCard" | default "true" }}
 {{ $tootLink := "" }}
 {{ $card := "" }}
 {{ $handleInst := "" }}
@@ -122,9 +123,11 @@
 						{{ end }}
 					{{ end }}
 				{{ end }}
+				{{ if eq $enableOGCard "true"}}
 				{{ with $json.card }}
 					{{- $cardData := . -}}
 					{{- with $cardData.image -}}
+					
 						<a href="{{ $cardData.url }}" rel="'noopener">
 							<div class="toot-card">
 								<div class="toot-card-image">
@@ -135,9 +138,10 @@
 									<p class="card-description">{{ $cardData.description }}</p>
 								</div>
 							</div>
-						</a>
+						</a> 
 					{{- end -}}
 				{{ end }}
+			  {{ end }}
 				{{ with $json.poll }}
 					{{ $poll := . }}
 					{{ with $poll.options }}

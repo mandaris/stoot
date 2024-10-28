@@ -35,6 +35,14 @@ The output for a post with sensitive images will look like the following
 The output for post with a poll will look like the following
 ![Statically rendered mastodon post with a poll](documentation/stoot-poll.png)
 
+### Turning off opengraph card
+
+Mastodon also includes opengraph information about the first link that it finds in the content of the toot. To disable it in the rendering, supply a value a third parameter like the example below.
+
+```go-html-template
+{{< stoot instance="social.lol" id="113363060744395515" enableOGCard="false" >}}
+```
+
 ## Notes about the plugin
 
 All the code was copy and pasted. I just packaged it up. I didn't make any changes because I'm not familiar with the Go programming language and want to easily get updates from Bryce.
@@ -52,3 +60,4 @@ Also, I _DO_ know that I could use the iframe that mastodon provides to embed a 
 
 1.0.2
 : Add new logo
+: Add option to toggle Open Graph card on embedded toots
