@@ -1,13 +1,13 @@
-{{ $masIns := .Get "instance" }}
-{{ $id := .Get "id" }}
-{{ $enableOGCard := .Get "enableOGCard" | default "true" }}
-{{ $tootLink := "" }}
-{{ $card := "" }}
-{{ $handleInst := "" }}
-{{ $mediaMD5 := "" }}
-{{ $imageCount := 0 }}
-{{ $votesCount := 0 }}
-{{ $urlToGet := print "https://" $masIns "/api/v1/statuses/" $id }}
+{{- $masIns := .Get "instance" -}}
+{{- $id := .Get "id" -}}
+{{- $enableOGCard := .Get "enableOGCard" | default "true" -}}
+{{- $tootLink := "" -}}
+{{- $card := "" -}}
+{{- $handleInst := "" -}}
+{{- $mediaMD5 := "" -}}
+{{- $imageCount := 0 -}}
+{{- $votesCount := 0 -}}
+{{- $urlToGet := print "https://" $masIns "/api/v1/statuses/" $id }}
 
 {{- with resources.GetRemote $urlToGet  -}}
 	{{ if (resources.GetRemote $urlToGet).Err }}
@@ -15,16 +15,16 @@
 			<p class="ctr legal">[Source not online<br />
 			at time of site build.]</p>
 		</blockquote>
-	{{ else }}
+	{{- else -}}
 		{{ $json := unmarshal .Content }}
 		{{ $jsonHolder := $json }}{{/* Being safe */}}
 
-		{{ if isset $json "account" }}
+		{{- if isset $json "account" -}}
 			{{ $tootLink = print "https://" $masIns "@" $json.account.acct "/status/" $id }}
 			{{ $handleInst = print "@" $json.account.acct "@" $masIns }}
-		{{ end }}
+		{{- end -}}
 
-		{{ if isset $json "content" }}
+		{{- if isset $json "content" -}}
 			<blockquote class="toot-blockquote" cite="{{ $tootLink }}">
 				<div class="toot-header">
 					<a class="toot-profile" href="https://{{ $masIns }}/@{{ $json.account.acct }}" rel="noopener">
@@ -32,6 +32,7 @@
 							src="{{ $json.account.avatar }}"
 							alt="Mastodon avatar for {{ $handleInst }}"
 							loading="lazy"
+							aria-hidden="true"
 						/>
 					</a>
 					<div class="toot-author">
@@ -39,7 +40,7 @@
 						<a class="toot-author-handle" href="https://{{ $masIns }}/@{{ $json.account.acct }}" rel="noopener">{{ $handleInst }}</a>
 					</div>
 				</div>
-				{{ $json.content | safeHTML }}
+				{{- $json.content | safeHTML -}}
 				{{ with $json.media_attachments }}
 					{{ range $media_attachments := . }}
 						{{ if eq $media_attachments.type "image" }}
@@ -68,8 +69,8 @@
 									(flagged&nbsp;at&nbsp;origin)
 								</div>
 							{{- end -}}
-						{{ end }}
-					{{ end }}
+						{{- end -}}
+					{{- end -}}
 					</div>
 					{{/*
 						N.B.:
@@ -80,7 +81,7 @@
 						to accomplish this. Not a good HTML practice,
 						but gets the job done.
 					*/}}
-					{{ range $media_attachments := . }}
+					{{- range $media_attachments := . -}}
 						{{ if eq $media_attachments.type "video" }}
 							{{ $mediaMD5 = md5 $media_attachments.url }}
 							<style>
@@ -121,9 +122,10 @@
 								{{- end -}}
 							</div>
 						{{ end }}
-					{{ end }}
-				{{ end }}
-				{{ if eq $enableOGCard "true"}}
+					{{- end -}}
+				{{- end -}}
+
+				{{- if eq $enableOGCard "true" -}}
 				{{ with $json.card }}
 					{{- $cardData := . -}}
 					{{- with $cardData.image -}}
@@ -141,8 +143,8 @@
 						</a> 
 					{{- end -}}
 				{{ end }}
-			  {{ end }}
-				{{ with $json.poll }}
+				{{- end -}}
+				{{- with $json.poll -}}
 					{{ $poll := . }}
 					{{ with $poll.options }}
 						{{ range $pollOptions := . }}
@@ -167,5 +169,5 @@
 				</div>
 			</blockquote>
 		{{ end }}
-	{{ end }}
+	{{- end -}}
 {{- end -}}
