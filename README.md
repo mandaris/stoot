@@ -130,3 +130,7 @@ There are two `div` tags in the toot card that you can use to make things work t
 *1.0.5*
 
 * Update the spacing
+
+*1.0.6*
+
+* Further reduce spacing
