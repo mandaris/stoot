@@ -131,6 +131,10 @@ There are two `div` tags in the toot card that you can use to make things work t
 
 * Update the spacing
 
+### 1.0.6
+
+* Further reduce spacing
+
 ### 1.1.0
 
 * Fix for try change in [Hugo 0.141.0](https://github.com/gohugoio/hugo/releases/tag/v0.141.0)
