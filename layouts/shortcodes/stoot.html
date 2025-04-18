@@ -15,7 +15,7 @@
 			<p class="ctr legal">[Source not online<br />
 			at time of site build.]</p>
 		</blockquote>
-	{{- else with .Value -}}
+	{{- else -}}
 		{{ $json := unmarshal .Content }}
 		{{ $jsonHolder := $json }}{{/* Being safe */}}
 
