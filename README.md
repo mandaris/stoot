@@ -107,26 +107,30 @@ There are two `div` tags in the toot card that you can use to make things work t
 
 ## Version History
 
-*1.0.0*
+### 1.0.0
 
 * Initial release
 
-*1.0.1*
+### 1.0.1
 
 * Removed width so that the blockquote expands as needed
 
-*1.0.2*
+### 1.0.2
 
 * Add new logo
 
-*1.0.3*
+### 1.0.3
 
 * Add option to toggle Open Graph card on embedded toots
 
-*1.0.4*
+### 1.0.4
 
 * Update the README.md
 
-*1.0.5*
+### 1.0.5
 
 * Update the spacing
+
+### 1.1.0
+
+* Fix for try change in [Hugo 0.141.0](https://github.com/gohugoio/hugo/releases/tag/v0.141.0)
