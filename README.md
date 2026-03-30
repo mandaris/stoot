@@ -142,3 +142,7 @@ There are two `div` tags in the toot card that you can use to make things work t
 ### 1.1.1
 
 * Attempt to fix error
+
+### 1.2.0
+
+* Fix to make compatible with [Hugo 0.158.0](https://github.com/gohugoio/hugo/releases/tag/v0.158.0)
